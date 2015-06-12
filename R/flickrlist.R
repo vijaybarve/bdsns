@@ -1,4 +1,4 @@
-#' flickrlist - Get list of media items on Flickr for the search string.
+#' flickrlist - Get metadata  mediofa items available on Flickr for the search string.
 #' @import XML
 #' @import RCurl
 #' @param apikey - API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)
