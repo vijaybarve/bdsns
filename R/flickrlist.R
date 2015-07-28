@@ -7,8 +7,6 @@
 #'  flickrlist(myapikey,"Danaus chrysippus")
 #' }
 #' @export
-
-
 flickrlist <- function (apikey=NA,stext=NA){
   if(is.na(apikey)){
     print("Need to supply API key for Flicker.com website. \n Get yours at http://www.flickr.com/services/api/misc.api_keys.html")
@@ -22,11 +20,9 @@ flickrlist <- function (apikey=NA,stext=NA){
   stext=paste("%22",gsub(" ","+",stext),"%22",sep="")
   pgno=1
   url<-paste("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=",apikey,"&text=",stext,cds,"&per_page=100&page=",pgno,"&format=rest",sep="")
-  ret=url
-  x <- readLines(url, warn = FALSE)
-  x1=x
+  x <- getURL(url, ssl.verifypeer = FALSE)
+  x <- unlist(strsplit(x,"\n"))
   x <- x[substr(x, 1, 13) == "<photos page="]
-  n <- as.integer(unlist(strsplit(x, "\""))[8])
   pages <- as.integer(unlist(strsplit(x, "\""))[4])
   cat(pages)
   if (pages == 0){

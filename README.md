@@ -11,8 +11,8 @@ Google Summer of Code 2015
 install.packages("devtools")
 require(devtools)
 
-install_github("vijaybarve/bdvis")
-require(bdvis)
+install_github("vijaybarve/bdsns")
+require(bdsns)
 ```
 
 Note: 
