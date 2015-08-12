@@ -15,7 +15,6 @@ getflickrdata <- function(apikey=NA,searchText=NA,searchType=NA){
     print("Need to supply search string.")
     return(NULL)
   }
-  
   downloadDate <- date()
   flickrData = flickrlist(apikey,searchText)
   if(is.matrix(flickrData)){

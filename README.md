@@ -1,8 +1,9 @@
 # `bdsns`
 Harvesting Biodiversity Records from Social Networking Sites
 
+[Barve, V. (2014). **bold** Discovering and developing primary biodiversity data from social networking sites: A novel approach. __bold__ Ecological Informatics, 24, 194–199. [link](doi:10.1016/j.ecoinf.2014.08.008)]
+
 Google Summer of Code 2015
-[Barve, V. (2014). Discovering and developing primary biodiversity data from social networking sites: A novel approach. Ecological Informatics, 24, 194–199. doi:10.1016/j.ecoinf.2014.08.008]
 
 ## Install
 
@@ -37,4 +38,12 @@ Function to download data form Flickr for multiple species and store it in sqlit
 
 ```r
 flickrtodatabase(myapikey,"test.txt","scname","testdb")
+```
+
+#### extract_flickrdb
+
+Helper function to extract Flickr data from sqlite database stored using ````flickrtodatabase````
+
+```r
+mydat=extract_flickrdb("testdb","text.csv")
 ```

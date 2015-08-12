@@ -1,7 +1,7 @@
 Package: bdsns
 Type: Package
 Title: Biodiversity Records from Social Networking Sites
-Version: 0.0.5
+Version: 0.0.6
 Date: 2015-08-12
 Author: Vijay Barve <vijay.barve@gmail.com>
 Maintainer: Vijay Barve <vijay.barve@gmail.com>
