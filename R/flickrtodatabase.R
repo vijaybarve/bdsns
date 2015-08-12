@@ -7,7 +7,7 @@
 #' @param dbfolder - Folder in which the database should be stored.
 #' @param StIndex - Starting Index. If is 1, then creates the databse file, otherwise appends the data in the database.
 #' @examples \dontrun{
-#'  getflickrdata(myapikey,"test.txt","scname","testdb")
+#'  flickrtodatabase(myapikey,"test.txt","scname","testdb")
 #' }
 #' @export
 flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",StIndex=1){
@@ -25,8 +25,6 @@ flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",
   if (StIndex==1){
     First=TRUE
   } else{First=FALSE}
-  #StIndex = 1
-  
   Filesize = 100 
   fdata=NULL
   for (i in StIndex:length(lp)){

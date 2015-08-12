@@ -24,7 +24,7 @@ flickrtodatabase - Get Flickr data for a list of items and store into a database
 }
 \examples{
 \dontrun{
- getflickrdata(myapikey,"test.txt","scname","testdb")
+ flickrtodatabase(myapikey,"test.txt","scname","testdb")
 }
 }
 
