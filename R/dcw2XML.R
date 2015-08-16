@@ -1,12 +1,12 @@
-#' dcwToXML - Convert Darwin Core format data frame to XML
+#' dcw2XML - Convert Darwin Core format data frame to XML
 #' @import XML
 #' @param dat - Darwin Core Data frame to convert to XML
 #' @return Simple Darwin Core format XML
 #' @examples \dontrun{
-#'  dcwToXML(dat)
+#'  dcw2XML(dat)
 #' } 
 #' @export
-dcwToXML <- function(dat=NA){
+dcw2XML <- function(dat=NA){
   root <- newXMLNode("SimpleDarwinRecordSet")
   for(i in 1:dim(dat[1])){
     rec <- newXMLNode("SimpleDarwinRecord", parent=root);
