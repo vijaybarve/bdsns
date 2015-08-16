@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+  <archive metadata="eml.xml" xmlns="http://rs.tdwg.org/dwc/text/">
+  <core rowType="http://rs.tdwg.org/dwc/terms/Taxon" ignoreHeaderLines="1" fieldsEnclosedBy="" fieldsTerminatedBy="\t" linesTerminatedBy="\r\n" encoding="UTF-8">
+  <files>
+  <location>whales.tab</location>
+  </files>
+  <id index="0"/>
+  <field index="1" term="http://rs.tdwg.org/dwc/terms/catalogNumber"/>
+  <field index="2" term="http://rs.tdwg.org/dwc/terms/occurrenceRemarks"/>
+  <field index="3" term="http://rs.tdwg.org/dwc/terms/eventDate"/>
+  <field index="4" term="http://rs.tdwg.org/dwc/terms/recordedBy"/>
+  <field index="5" term="http://rs.tdwg.org/dwc/terms/decimalLatitude"/>
+  <field index="6" term="http://rs.tdwg.org/dwc/terms/decimalLongitude"/>
+  <field index="7" term="http://rs.tdwg.org/dwc/terms/locationID"/>
+  <field index="8" term="http://rs.tdwg.org/dwc/terms/fieldNotes"/>
+  <field index="9" term="http://rs.tdwg.org/dwc/terms/scientificName"/>
+  </core>
+<archive>  

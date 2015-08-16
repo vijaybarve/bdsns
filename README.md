@@ -58,8 +58,16 @@ flickr2dwc(flickrdat)
 
 #### dcw2XML
 
-Convert Flicker data frame to Darwin Core format
+Convert Darwin Core format data frame to XML
 
 ```r
 dcw2XML(dat)
+```
+
+#### flickr2dwcA
+
+Convert Flicker data frame to Darwin Core Archiev file
+
+```r
+flickr2dwcA(flickrdat)
 ```

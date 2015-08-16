@@ -3,6 +3,7 @@
 export(dcw2XML)
 export(extract_flickrdb)
 export(flickr2dwc)
+export(flickr2dwcA)
 export(flickrlist)
 export(flickrtodatabase)
 export(getflickrdata)
