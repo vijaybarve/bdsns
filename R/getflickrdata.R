@@ -20,7 +20,8 @@ getflickrdata <- function(apikey=NA,searchText=NA,searchType=NA){
   if(is.matrix(flickrData)){
     return(NULL)
   } else {
-    out <- cbind(flickrData,searchText,searchType,downloadDate)  
+    url_site=paste("http://www.flickr.com/photos/",flickrData$owner,"/",flickrData$id,sep="")
+    out <- cbind(flickrData,url_site,searchText,searchType,downloadDate)  
   }
   return(out)
 }
