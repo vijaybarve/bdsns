@@ -17,7 +17,7 @@ getflickrdata <- function(apikey=NA,searchText=NA,searchType=NA){
   }
   downloadDate <- date()
   flickrData = flickrlist(apikey,searchText)
-  if(is.matrix(flickrData)){
+  if(is.null(flickrData)){
     return(NULL)
   } else {
     url_site=paste("http://www.flickr.com/photos/",flickrData$owner,"/",flickrData$id,sep="")

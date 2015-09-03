@@ -27,7 +27,7 @@ flickrlist <- function (apikey=NA,stext=NA){
   cat(pages)
   if (pages == 0){
     print("No records found... ")
-    return(NA)
+    return(NULL)
   }
   cat("  0")
   for (k in 1:pages){
