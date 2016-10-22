@@ -1,5 +1,6 @@
 #' flickrlist - Get list of media items on Flickr for the search string.
 #' @import XML
+#' @importFrom RCurl getURL
 #' @param apikey - API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)
 #' @param stext - Test to search, a speice nems of common name.
 #' @param bbox - Bounding box. Geographical coordinates of Left top and right bottom corners seperate by comma in string format i.e. "-180,-90,180,90" for whole world.
@@ -105,7 +106,7 @@ checkbbox <- function(bbox="-180,-90,180,90"){
   bbe <- as.numeric(unlist(strsplit(bbox,",")))
   if(length(bbe)!=4){
     print("Bounding bix needs four values")
-    retuen(NULL)
+    return(NULL)
   }
   if(bbe[1]>bbe[3]){
     temp <- bbe[1]

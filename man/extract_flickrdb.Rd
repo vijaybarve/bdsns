@@ -12,7 +12,7 @@ extract_flickrdb(dbname = NA, outputfile = NA)
 \item{outputfile}{output csv file}
 }
 \value{
-dataframe containing Flickr data from database
+dataframe containing the Flickr data from database
 }
 \description{
 extract_flickrdb - Extract Flickr data from sqlite database

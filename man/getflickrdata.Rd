@@ -9,9 +9,9 @@ getflickrdata(apikey = NA, searchText = NA, searchType = NA)
 \arguments{
 \item{apikey}{- API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)}
 
-\item{searchText}{- Text to search, a speice name or common name.}
+\item{searchText}{- Test to search, a speice nems of common name.}
 
-\item{searchType}{- Type of the search like Scientific Name or Common name etc. added as an attribute in the return data frame.}
+\item{searchType}{- Type of the search like Scientific Name or Common name etc. added as a prarameter in the return data frame.}
 }
 \description{
 getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appende.

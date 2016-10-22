@@ -1,5 +1,6 @@
 #' flickrtodatabase - Get Flickr data for a list of items and store into a database
 #' @import sqldf
+#' @importFrom utils read.csv
 #' @param apikey - API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)
 #' @param inputfile - Input csv file containing the list of species to search for.
 #' @param inputfield - Fieldname containing the names to search.
@@ -13,7 +14,7 @@
 flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",StIndex=1){
   list <- read.csv(inputfile)
   if(is.element(inputfield,names(list))){
-  lp=as.character(list[,which(names(list)==inputfield)])
+    lp=as.character(list[,which(names(list)==inputfield)])
   } else {
     print("The inputfield not found in the data file...")
     return(NULL)
@@ -25,13 +26,15 @@ flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",
   if (StIndex==1){
     First=TRUE
   } else{First=FALSE}
+  #StIndex = 1
+  
   Filesize = 100 
   fdata=NULL
   for (i in StIndex:length(lp)){
     st = as.character(lp[i])
     print(paste(i,st,Sys.time()))
     a <- getflickrdata(apikey,st,inputfield)
-    if(is.null(a)){} else{fdata=rbind(fdata,a)}
+    if(is.na(a[1])){} else{fdata=rbind(fdata,a)}
     if(!(is.null(fdata))){
       if (dim(fdata)[1]>Filesize){
         StIndex=i
@@ -44,7 +47,7 @@ flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",
         }
         fdata=NULL
       }
-     }
+    }
   }
   if(!is.null(fdata)){
     print(paste("Writing to database ... till species",i))

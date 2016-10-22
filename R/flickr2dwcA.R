@@ -1,4 +1,5 @@
 #' flickr2dwcA - Convert Flicker data frame to Darwin Core Archiev file
+#' @importFrom utils zip
 #' @param flickrdat - Flickr Data frame to convert to Darwin Core Archiev file
 #' @param outfile - Output file name without a .zip extension
 #' @examples \dontrun{
