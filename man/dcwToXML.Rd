@@ -20,4 +20,3 @@ dcwToXML - Convert Darwin Core format data frame to XML
  dcwToXML(dat)
 } 
 }
-

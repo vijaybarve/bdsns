@@ -5,7 +5,7 @@
 #' @param outputfile output csv file
 #' @return dataframe containing the Flickr data from database
 #' @examples \dontrun{
-#' mydat=extract_flickrdb("testdb","text.csv")
+#' mydat <- extract_flickrdb("testdb","text.csv")
 #' }
 #' @export
 extract_flickrdb <- function(dbname=NA,outputfile=NA){

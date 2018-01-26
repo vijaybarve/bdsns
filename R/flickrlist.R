@@ -2,8 +2,8 @@
 #' @import XML
 #' @importFrom RCurl getURL
 #' @param apikey - API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)
-#' @param stext - Test to search, a speice nems of common name.
-#' @param bbox - Bounding box. Geographical coordinates of Left top and right bottom corners seperate by comma in string format i.e. "-180,-90,180,90" for whole world.
+#' @param stext - Test to search, a species name of common name.
+#' @param bbox - Bounding box. Geographical coordinates of Left top and right bottom corners separate by comma in string format i.e. "-180,-90,180,90" for whole world.
 #' 
 #' Using bbox parameter would not return photo without geocoding. If photos returned are more than 4000 the function automatically defaults to geocoded photos.
 #' @examples \dontrun{
@@ -19,22 +19,22 @@ flickrlist <- function (apikey=NA,stext=NA,bbox=NA){
     print("Need to supply search string.")
     return(NULL)
   }
-  cds="&extras=description%2C+license%2C+date_upload%2C+date_taken%2C+owner_name%2C+geo%2C+tags%2C+machine_tag%2C+url_c"
+  cds <- "&extras=description%2C+license%2C+date_upload%2C+date_taken%2C+owner_name%2C+geo%2C+tags%2C+machine_tag%2C+url_c"
   if (! is.na(bbox)){
-    cds = paste(cds,"&bbox=",bbox,sep="")
+    cds <- paste(cds,"&bbox=",bbox,sep="")
   } else {
-    bbox = "-180,-90,180,90"
+    bbox <- "-180,-90,180,90"
   }
-  stext=paste("%22",gsub(" ","+",stext),"%22",sep="")
-  pgno=1
+  stext <- paste("%22",gsub(" ","+",stext),"%22",sep="")
+  pgno <- 1
   url<-paste("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=",apikey,"&text=",stext,cds,"&per_page=100&page=",pgno,"&format=rest",sep="")
-  ret=url
+  ret <- url
   x <- getURL(url, ssl.verifypeer = FALSE)
   x <- unlist(strsplit(x,"\n"))
   x <- x[substr(x, 1, 13) == "<photos page="]
   n <- as.integer(unlist(strsplit(x, "\""))[8])
   if (length(n) == 0L){
-    n=0
+    n <- 0
   }
   if (n > 4000){
     #cat("\n Too many records fetching a smaller sets")
@@ -42,12 +42,12 @@ flickrlist <- function (apikey=NA,stext=NA,bbox=NA){
     bbe <- as.numeric(unlist(strsplit(bbox,",")))
     xm <- (bbe[3] + bbe[1]) / 2
     ym <- (bbe[4] + bbe[2]) / 2
-    q1 = checkbbox(paste(bbe[1],",",bbe[2],",",xm,",",ym,sep=""))
-    q2 = checkbbox(paste(bbe[3],",",bbe[2],",",xm,",",ym,sep=""))
-    q3 = checkbbox(paste(bbe[1],",",bbe[4],",",xm,",",ym,sep=""))
-    q4 = checkbbox(paste(bbe[3],",",bbe[4],",",xm,",",ym,sep=""))
+    q1<- checkbbox(paste(bbe[1],",",bbe[2],",",xm,",",ym,sep=""))
+    q2 <- checkbbox(paste(bbe[3],",",bbe[2],",",xm,",",ym,sep=""))
+    q3 <- checkbbox(paste(bbe[1],",",bbe[4],",",xm,",",ym,sep=""))
+    q4 <- checkbbox(paste(bbe[3],",",bbe[4],",",xm,",",ym,sep=""))
     res <- flickrlist(apikey,stext,bbox=q1)
-    resret = res 
+    resret <- res 
     res <- flickrlist(apikey,stext,bbox=q2)
     resret <- rbind(resret,res)
     res <- flickrlist(apikey,stext,bbox=q3)
@@ -65,7 +65,7 @@ flickrlist <- function (apikey=NA,stext=NA,bbox=NA){
     cat("  0")
     for (k in 1:pages){
       url<-paste("https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=",apikey,"&text=",stext,cds,"&per_page=100&page=",k,"&format=rest",sep="")
-      ret=url
+      ret <- url
       xData <- getURL(url, ssl.verifypeer = FALSE)
       doc <- xmlInternalTreeParse(xData)
       nodes <- getNodeSet(doc, "//photo ")
@@ -92,10 +92,10 @@ flickrlist <- function (apikey=NA,stext=NA,bbox=NA){
         ans[j,]$description <- as.character((dscr[1,j]))
       }
       cat(paste("-",k*100,sep=""))
-      if (k==1){ansfin=ans}
+      if (k==1){ansfin <- ans}
       else{
-        ansfin=rbind(ansfin,ans)
-        ans=NULL
+        ansfin <- rbind(ansfin,ans)
+        ans <- NULL
       }        
     }
     return(ansfin)

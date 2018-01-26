@@ -1,6 +1,6 @@
-#' getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appende.
+#' getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appended.
 #' @param apikey - API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)
-#' @param searchText - Test to search, a speice nems of common name.
+#' @param searchText - Test to search, a species name of common name.
 #' @param searchType - Type of the search like Scientific Name or Common name etc. added as a prarameter in the return data frame.
 #' @examples \dontrun{
 #'  getflickrdata(myapikey,"Danaus chrysippus","Scname")
@@ -21,7 +21,7 @@ getflickrdata <- function(apikey=NA,searchText=NA,searchType=NA){
   if(is.null(flickrData)){
     return(NULL)
   } else {
-    url_site=paste("http://www.flickr.com/photos/",flickrData$owner,"/",flickrData$id,sep="")
+    url_site <- paste("http://www.flickr.com/photos/",flickrData$owner,"/",flickrData$id,sep="")
     out <- cbind(flickrData,url_site,searchText,searchType,downloadDate)  
   }
   return(out)

@@ -19,7 +19,6 @@ extract_flickrdb - Extract Flickr data from sqlite database
 }
 \examples{
 \dontrun{
-mydat=extract_flickrdb("testdb","text.csv")
+mydat <- extract_flickrdb("testdb","text.csv")
 }
 }
-

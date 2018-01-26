@@ -6,7 +6,7 @@
 #' @param inputfield - Fieldname containing the names to search.
 #' @param outdbname - Name of the database
 #' @param dbfolder - Folder in which the database should be stored.
-#' @param StIndex - Starting Index. If is 1, then creates the databse file, otherwise appends the data in the database.
+#' @param StIndex - Starting Index. If is 1, then creates the database file, otherwise appends the data in the database.
 #' @examples \dontrun{
 #'  flickrtodatabase(myapikey,"test.txt","scname","testdb")
 #' }
@@ -19,16 +19,14 @@ flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",
     print("The inputfield not found in the data file...")
     return(NULL)
   }
-  origloc=getwd()
+  origloc <- getwd()
   setwd(dbfolder)
-  rsql=paste("attach '",outdbname,"' as new",sep="")
+  rsql <- paste("attach '",outdbname,"' as new",sep="")
   sqldf(rsql)
   if (StIndex==1){
-    First=TRUE
-  } else{First=FALSE}
-  #StIndex = 1
-  
-  Filesize = 100 
+    First <- TRUE
+  } else{First <- FALSE}
+  Filesize <- 100 
   fdata=NULL
   for (i in StIndex:length(lp)){
     st = as.character(lp[i])
@@ -41,11 +39,11 @@ flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",
         print(paste("Writing to database ... till species",i))
         if (First){
           sqldf("create table Flickrrec as select * from fdata", dbname = outdbname)
-          First = FALSE
+          First <- FALSE
         } else {
           sqldf("insert into Flickrrec select * from fdata",dbname=outdbname)
         }
-        fdata=NULL
+        fdata <- NULL
       }
     }
   }

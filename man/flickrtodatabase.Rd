@@ -18,7 +18,7 @@ flickrtodatabase(apikey, inputfile, inputfield, outdbname, dbfolder = ".",
 
 \item{dbfolder}{- Folder in which the database should be stored.}
 
-\item{StIndex}{- Starting Index. If is 1, then creates the databse file, otherwise appends the data in the database.}
+\item{StIndex}{- Starting Index. If is 1, then creates the database file, otherwise appends the data in the database.}
 }
 \description{
 flickrtodatabase - Get Flickr data for a list of items and store into a database
@@ -28,4 +28,3 @@ flickrtodatabase - Get Flickr data for a list of items and store into a database
  flickrtodatabase(myapikey,"test.txt","scname","testdb")
 }
 }
-

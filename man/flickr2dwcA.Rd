@@ -2,21 +2,20 @@
 % Please edit documentation in R/flickr2dwcA.R
 \name{flickr2dwcA}
 \alias{flickr2dwcA}
-\title{flickr2dwcA - Convert Flicker data frame to Darwin Core Archiev file}
+\title{flickr2dwcA - Convert Flicker data frame to Darwin Core Archive file}
 \usage{
 flickr2dwcA(flickrdat = NA, outfile = NA)
 }
 \arguments{
-\item{flickrdat}{- Flickr Data frame to convert to Darwin Core Archiev file}
+\item{flickrdat}{- Flickr Data frame to convert to Darwin Core Archive file}
 
 \item{outfile}{- Output file name without a .zip extension}
 }
 \description{
-flickr2dwcA - Convert Flicker data frame to Darwin Core Archiev file
+flickr2dwcA - Convert Flicker data frame to Darwin Core Archive file
 }
 \examples{
 \dontrun{
  flickr2dwcA(flickrdat)
 } 
 }
-

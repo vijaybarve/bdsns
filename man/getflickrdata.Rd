@@ -2,23 +2,22 @@
 % Please edit documentation in R/getflickrdata.R
 \name{getflickrdata}
 \alias{getflickrdata}
-\title{getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appende.}
+\title{getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appended.}
 \usage{
 getflickrdata(apikey = NA, searchText = NA, searchType = NA)
 }
 \arguments{
 \item{apikey}{- API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)}
 
-\item{searchText}{- Test to search, a speice nems of common name.}
+\item{searchText}{- Test to search, a species name of common name.}
 
 \item{searchType}{- Type of the search like Scientific Name or Common name etc. added as a prarameter in the return data frame.}
 }
 \description{
-getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appende.
+getflickrdata - Get list of media items on Flickr for the search string in a data frame with searchType and downloadDate appended.
 }
 \examples{
 \dontrun{
  getflickrdata(myapikey,"Danaus chrysippus","Scname")
 }
 }
-

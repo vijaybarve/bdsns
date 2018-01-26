@@ -9,9 +9,9 @@ flickrlist(apikey = NA, stext = NA, bbox = NA)
 \arguments{
 \item{apikey}{- API key provided by Flickr.com website. (Refer http://www.flickr.com/services/api/misc.api_keys.html for more details.)}
 
-\item{stext}{- Test to search, a speice nems of common name.}
+\item{stext}{- Test to search, a species name of common name.}
 
-\item{bbox}{- Bounding box. Geographical coordinates of Left top and right bottom corners seperate by comma in string format i.e. "-180,-90,180,90" for whole world.
+\item{bbox}{- Bounding box. Geographical coordinates of Left top and right bottom corners separate by comma in string format i.e. "-180,-90,180,90" for whole world.
 
 Using bbox parameter would not return photo without geocoding. If photos returned are more than 4000 the function automatically defaults to geocoded photos.}
 }
@@ -23,4 +23,3 @@ flickrlist - Get list of media items on Flickr for the search string.
  flickrlist(myapikey,"Danaus chrysippus")
 }
 }
-

@@ -20,4 +20,3 @@ flickr2dwc - Convert Flicker data frame to Darwin Core format
  flickr2dwc(flickrdat)
 } 
 }
-

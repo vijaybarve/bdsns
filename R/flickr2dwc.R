@@ -7,7 +7,7 @@
 #' @export
 flickr2dwc <- function(flickrdat=NA){
   dat<-flickrdat[,c(1,6,12,14,15,16,19,27,29)]
-  names(dat)=c("catalogNumber","occurrenceRemarks","eventDate","recordedBy"
+  names(dat) <- c("catalogNumber","occurrenceRemarks","eventDate","recordedBy"
                ,"decimalLatitude","decimalLongitude","locationID"
                ,"fieldNotes","scientificName")
   return(dat)
