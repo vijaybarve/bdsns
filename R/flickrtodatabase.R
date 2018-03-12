@@ -32,7 +32,7 @@ flickrtodatabase <- function(apikey,inputfile,inputfield,outdbname,dbfolder=".",
     st = as.character(lp[i])
     print(paste(i,st,Sys.time()))
     a <- getflickrdata(apikey,st,inputfield)
-    if(is.na(a[1])){} else{fdata=rbind(fdata,a)}
+    if(is.null(a)){} else{fdata=rbind(fdata,a)}
     if(!(is.null(fdata))){
       if (dim(fdata)[1]>Filesize){
         StIndex=i
